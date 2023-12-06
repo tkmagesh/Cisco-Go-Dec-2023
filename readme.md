@@ -90,3 +90,32 @@ To get the list of supported platforms
 
 To cross compile
 > GOOS=windows GOARCH=amd64 go build 01-hello-world.go
+
+## Data Types
+- string
+- bool
+
+- int8
+- int16
+- int32
+- int64
+- int
+
+- uint8
+- uint16
+- uint32
+- uint64
+- uint
+
+- float32
+- float64
+
+- complex64 (real[float32] + imaginary[float32])
+- complex128 (real[float64] + imaginary[float64])
+
+- byte (alias for uint8)
+- rune (alias for int32) (unicode code point)
+
+## Variable Declarations
+- using "var" keyword
+- using ":="
