@@ -127,3 +127,7 @@ To cross compile
 - package scope
     - cannot use ":=" (use "var" instead)
     - can have unused variables
+
+## Constants
+- use "const" keyword
+- constants can remain unused (both in function and package scope)
