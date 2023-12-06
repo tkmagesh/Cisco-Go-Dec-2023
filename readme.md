@@ -136,3 +136,12 @@ To cross compile
 - if else
 - for
 - switch case
+
+## Functions
+- Can have return more than one result
+- Variadic functions 
+- Anonymous functions
+- Higher Order Functions
+    - Functions can be assigned as values to variables
+    - Functions can be passed as arguments to other functions
+    - Functions can be returned as return values from other functions
