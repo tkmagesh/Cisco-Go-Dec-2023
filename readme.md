@@ -21,7 +21,7 @@
 - Visual Studio Code (https://code.visualstudio.com)
 - Go Extension for Visual Studio Code (https://marketplace.visualstudio.com/items?itemName=golang.Go)
 ### Verification
-- go version
+- >go version
 
 ## Why Go?
 - Simplicity
@@ -46,3 +46,26 @@
     - APIs 
         - sync package
         - sync/atomic package
+
+## Hello World
+
+```
+//01-hello-world.go
+
+/* package declaration */
+package main
+
+/* import dependency packages */
+
+/* package scope type/variable declarations */
+
+/* package init function */
+
+/* main function */
+func main() {
+	print("Hello World!")
+}
+
+/* other functions */
+```
+> go run 01-hello-world.go
