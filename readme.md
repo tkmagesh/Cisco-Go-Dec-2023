@@ -68,4 +68,25 @@ func main() {
 
 /* other functions */
 ```
+To run the program
 > go run 01-hello-world.go
+
+To create a build
+> go build 01-hello-world.go
+
+> go build -o [binary-name] 01-hello-world.go
+
+### Cross Compilation
+To get the environment variables
+> go env
+
+> go env GOOS GOARCH
+
+To change the environment variables
+> go env -w GOOS=[value] GOARCH=[value]
+
+To get the list of supported platforms
+> go tool dist list
+
+To cross compile
+> GOOS=windows GOARCH=amd64 go build 01-hello-world.go
