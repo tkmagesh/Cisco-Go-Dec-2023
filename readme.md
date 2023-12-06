@@ -119,3 +119,11 @@ To cross compile
 ## Variable Declarations
 - using "var" keyword
 - using ":="
+
+## Scope
+- function scope
+    - can use ":=" for declaring and initializing variables
+    - cannot have unused variables
+- package scope
+    - cannot use ":=" (use "var" instead)
+    - can have unused variables
