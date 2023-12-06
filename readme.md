@@ -131,3 +131,8 @@ To cross compile
 ## Constants
 - use "const" keyword
 - constants can remain unused (both in function and package scope)
+
+## Constructs
+- if else
+- for
+- switch case
