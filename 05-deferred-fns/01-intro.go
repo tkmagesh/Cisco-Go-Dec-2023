@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	defer func() {
 		fmt.Println("	[main] - deferred")
+		// recover()
 	}()
 	fmt.Println("main started")
 	f1()
@@ -37,5 +41,6 @@ func f2() {
 		fmt.Println("	[f2] - deferred")
 	}()
 	fmt.Println("f2 started")
+	panic(errors.New("dummy error"))
 	fmt.Println("f2 completed")
 }
