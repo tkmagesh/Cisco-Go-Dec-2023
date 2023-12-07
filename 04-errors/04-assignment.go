@@ -5,7 +5,12 @@ Make sure that every function has ONLY ONE reason to change (SRP)
 
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
+
+var ErrInvalidOperation error = errors.New("invalid operation")
 
 func main() {
 	var userChoice, n1, n2, result int
@@ -15,12 +20,12 @@ func main() {
 		if userChoice == 5 {
 			break
 		}
-		// remove the following if block by using errors
-		if userChoice < 1 || userChoice > 5 {
+
+		oper, err := getOperation(userChoice)
+		if err == ErrInvalidOperation {
 			fmt.Println("Invalid choice")
 			continue
 		}
-		oper := getOperation(userChoice)
 		n1, n2 = getOperands()
 		result = oper(n1, n2)
 		fmt.Println("Result :", result)
@@ -58,15 +63,18 @@ func divide(x, y int) int {
 }
 
 // return an error if the userChoice is not 1 - 4
-func getOperation(userChoice int) func(int, int) int {
+func getOperation(userChoice int) (op func(int, int) int, err error) {
 	switch userChoice {
 	case 1:
-		return add
+		op = add
 	case 2:
-		return subtract
+		op = subtract
 	case 3:
-		return multiply
+		op = multiply
+	case 4:
+		op = divide
 	default:
-		return divide
+		err = ErrInvalidOperation
 	}
+	return
 }
