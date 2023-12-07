@@ -8,10 +8,15 @@ import (
 var ErrDivideByZero error = errors.New("divisor cannot be 0")
 
 func main() {
-	var multiplier, divisor int
+
 	for {
+		var multiplier, divisor int
 		fmt.Println("Enter the multiplier and divisor")
-		fmt.Scanln(&multiplier, &divisor)
+		inputCount, err := fmt.Scanf("%d %d\n", &multiplier, &divisor)
+		if inputCount != 2 {
+			fmt.Println("Invalid input :", err)
+			continue
+		}
 		q, r, err := divide(multiplier, divisor)
 		if err == ErrDivideByZero {
 			fmt.Println("Do not attempt to divide by 0")
@@ -28,6 +33,7 @@ func main() {
 
 // using named results
 func divide(x, y int) (quotient, remainder int, err error) {
+	fmt.Printf("[divide] x = %d and y = %d\n", x, y)
 	if y == 0 {
 		err = ErrDivideByZero
 		return
