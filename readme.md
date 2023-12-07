@@ -168,3 +168,4 @@ To cross compile
 ![image slice](./images/slice.png)
 
 - Map
+    - typed collection of key/value pairs
