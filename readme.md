@@ -154,3 +154,10 @@ To cross compile
 - Create errors
     - errors.New()
     - fmt.Errorf()
+
+## Collection
+- Array
+    - fixed sized typed collection
+    - Members can be accessed using indexer
+- Slice
+- Map
