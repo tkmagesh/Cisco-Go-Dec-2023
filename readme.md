@@ -160,4 +160,11 @@ To cross compile
     - fixed sized typed collection
     - Members can be accessed using indexer
 - Slice
+    - varying sized typed collection
+    - pointer to an underlying array
+    - append() - to add new items
+    - len() - # of values that can be accessed from the underlying array through the slice
+    - cap() - memory initialized + memory uninitialized(only allocated)
+![image slice](./images/slice.png)
+
 - Map
