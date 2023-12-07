@@ -76,6 +76,9 @@ To create a build
 
 > go build -o [binary-name] 01-hello-world.go
 
+Escape Analysis
+> go build -gcflags="-m" [file_name.go]
+
 ### Cross Compilation
 To get the environment variables
 > go env
@@ -169,3 +172,43 @@ To cross compile
 
 - Map
     - typed collection of key/value pairs
+
+## Modules & Packages
+- Module
+    - any code that need to be versioned and deployed together
+    - typically a folder with go.mod file (manifest file)
+        - module name
+        - go runtime version
+        - dependencies
+    - To create a mod file
+        > go mod init [module_name]
+    - To execute a module
+        > go run .
+    - To create a build
+        > go build .
+        > go build -o [binary_name] .
+- Package
+    - internal organization of a module
+    - typically folders
+- Using 3rd party modules
+    - To get 3rd party modules (downloaded GOPATH/pkg/mod folder)
+        - > go get [module_name]
+        - > ex: go get github.com/fatih/color
+    - To update the go.mod file
+        > go mod tidy
+    - To download the documented (go.mod) dependencies
+        > go mod download
+    - To analyze the dependency graph
+        > go mod graph
+    - To get info about one dependency
+        > go mod why [module_name]
+    - To localize the dependencies
+        > go mod vendor
+    - To bypass the local vendor folder
+        - > go run -mod=mod .
+        - > go build -mod=mod .
+    - To install a module as an executable (GOPATH/bin folder)
+        > go install [module_name]
+    - To verify the dependency modules
+        > go mod verify
+    - Reference: https://go.dev/ref/mod
