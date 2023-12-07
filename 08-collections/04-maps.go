@@ -27,6 +27,7 @@ func main() {
 	productRanks["pen"] = 3
 	productRanks["marker"] = 5
 	productRanks["pencil"] = 2
+
 	fmt.Println(productRanks)
 
 	fmt.Println("Iterating a map using range")
