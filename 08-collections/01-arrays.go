@@ -31,10 +31,17 @@ func main() {
 	fmt.Println(nosPtr[0]) // members can be accessed from the pointer as well
 
 	// use the sort function to sort the nos array
-	sort()
+	fmt.Println("After sorting:")
+	sort(&nos)
 	fmt.Println(nos)
 }
 
-func sort( /* ? */ ) {
-	// use bubble sort to sort the value
+func sort(values *[5]int) {
+	for i := 0; i < len(values)-1; i++ {
+		for j := i + 1; j < len(values); j++ {
+			if values[i] > values[j] {
+				values[i], values[j] = values[j], values[i]
+			}
+		}
+	}
 }
