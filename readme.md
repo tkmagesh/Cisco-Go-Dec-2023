@@ -145,3 +145,12 @@ To cross compile
     - Functions can be assigned as values to variables
     - Functions can be passed as arguments to other functions
     - Functions can be returned as return values from other functions
+
+## Errors
+- Errors are just values 
+- Errors are not "thrown" but returned
+- Typically, errors are objects implementing "error" interface
+    - Error() method
+- Create errors
+    - errors.New()
+    - fmt.Errorf()
