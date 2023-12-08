@@ -244,3 +244,15 @@ To cross compile
 - WaitGroup
     - semaphore based counter
     - can block the execution of the function until the counter becomes 0
+
+- Channels
+    - Datatype for enabling communication between goroutines
+    - Declaration
+        > var ch chan int
+    - Initialization
+        > ch = make(chan int)
+    - Operation (using ( <- ) operator)
+        - Send Operation
+            > ch <- 100
+        - Receive Operation
+            > data := <-ch
