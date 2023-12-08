@@ -212,3 +212,7 @@ To cross compile
     - To verify the dependency modules
         > go mod verify
     - Reference: https://go.dev/ref/mod
+
+## Structs
+- Synonymous to classes
+- Value types
