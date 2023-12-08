@@ -216,3 +216,6 @@ To cross compile
 ## Structs
 - Synonymous to classes
 - Value types
+
+## Methods
+- functions with receivers
