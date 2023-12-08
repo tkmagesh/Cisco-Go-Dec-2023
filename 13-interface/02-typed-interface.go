@@ -25,30 +25,16 @@ func (r Rectangle) Area() float32 {
 }
 
 /*
-func PrintArea(x interface{}) {
-	switch o := x.(type) {
-	case Circle:
-		fmt.Println("Area :", o.Area())
-	case Rectangle:
-		fmt.Println("Area :", o.Area())
-	default:
-		fmt.Println("Invalid type")
-	}
-}
-*/
-
-/*
-func PrintArea(x interface{}) {
-	switch o := x.(type) {
-	case interface{ Area() float32 }: //any object with Area() method
-		fmt.Println("Area :", o.Area())
-	default:
-		fmt.Println("Invalid type")
-	}
-}
-*/
-
 func PrintArea(x interface{ Area() float32 }) {
+	fmt.Println("Area :", x.Area())
+}
+*/
+
+type AreaFinder interface {
+	Area() float32
+}
+
+func PrintArea(x AreaFinder) {
 	fmt.Println("Area :", x.Area())
 }
 
@@ -83,15 +69,46 @@ func (t Triangle) Perimeter() float32 {
 	return t.Base + float32(math.Sqrt((float64((t.Base * t.Base) + (4 * t.Height * t.Height)))))
 }
 
-func PrintPerimeter(x interface{ Perimeter() float32 }) {
+/*
+	func PrintPerimeter(x interface{ Perimeter() float32 }) {
+		fmt.Println("Perimeter :", x.Perimeter())
+	}
+*/
+type PerimeterFinder interface {
+	Perimeter() float32
+}
+
+func PrintPerimeter(x PerimeterFinder) {
 	fmt.Println("Perimeter :", x.Perimeter())
 }
 
 // v5.0 (interface composition)
+/*
 func PrintStats(x interface {
 	interface{ Area() float32 }
 	interface{ Perimeter() float32 }
 }) {
+	PrintArea(x)      // interface { Area() float32 }
+	PrintPerimeter(x) // interface { Perimeter() float32 }
+}
+*/
+
+/*
+func PrintStats(x interface {
+	AreaFinder
+	PerimeterFinder
+}) {
+	PrintArea(x)      // interface { Area() float32 }
+	PrintPerimeter(x) // interface { Perimeter() float32 }
+}
+*/
+
+type StatsFinder interface {
+	AreaFinder
+	PerimeterFinder
+}
+
+func PrintStats(x StatsFinder) {
 	PrintArea(x)      // interface { Area() float32 }
 	PrintPerimeter(x) // interface { Perimeter() float32 }
 }
