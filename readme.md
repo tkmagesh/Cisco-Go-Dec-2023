@@ -223,3 +223,7 @@ To cross compile
 ## Methods
 - functions with receivers
 - Type definition & method definition must be in the same package
+
+## Interfaces
+- Interfaces are implicitly implemented
+- Interfaces can be created based on the usage of the types
