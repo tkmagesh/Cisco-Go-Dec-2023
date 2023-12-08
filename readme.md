@@ -227,3 +227,20 @@ To cross compile
 ## Interfaces
 - Interfaces are implicitly implemented
 - Interfaces can be created based on the usage of the types
+- Interfaces can be composed
+
+## Concurrency
+- Ability to have more than one execution path
+- Typically achieved using OS threads (Multithreading)
+- Goroutine
+    - A concurrent operation in Go is represented as a "goroutine"
+    - A function can be executed as a goroutine
+    - ONLY 4KB of memory
+    - Application binaries/builds are packed with a GC & Scheduler
+    - Scheduler (N : M scheduler) schedules the execution of the goroutines using the OS threads
+    - N = # of goroutines, M = # of OS Threads and N >= M
+![image concurrency](./images/concurrency.png)
+
+- WaitGroup
+    - semaphore based counter
+    - can block the execution of the function until the counter becomes 0
