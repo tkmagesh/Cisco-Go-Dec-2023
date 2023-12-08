@@ -256,3 +256,9 @@ To cross compile
             > ch <- 100
         - Receive Operation
             > data := <-ch
+    - Behaviors
+        - Receive Operation
+            - A receive operation is ALWAYS a blocking operation
+        - Send Operation
+            - A send operation on succeed ONLY if a receive is already initiated
+    ![image channel behaviors](./images/channel-bahavior.png)
