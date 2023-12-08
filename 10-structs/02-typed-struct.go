@@ -14,6 +14,23 @@ func main() {
 		var product Product
 	*/
 
+	// var pen Product = Product{100, "Pen", 5}
+	// var pen Product = Product{100, "Pen"} // cannot partially initialize
+	/*
+		var pen Product = Product{
+			Id:   100,
+			Name: "Pen",
+		}
+	*/
+
+	/*
+		var pen Product
+		pen.Id = 100
+		pen.Name = "Pen"
+		pen.Cost = 5
+	*/
+
+	// the below is a standard approach
 	var pen Product = Product{
 		Id:   100,
 		Name: "Pen",
