@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
 type Product struct {
 	Id   int
@@ -39,7 +42,9 @@ func (pp PerishableProduct) Print() {
 
 func main() {
 	grapes := NewPerishableProduct(102, "Grapes", 100, "2 Days")
+	fmt.Println(unsafe.Sizeof(*grapes))
 	grapes.Print() // invoking the Print() method of the "Product" through PerishableProduct
 	grapes.applyDiscount(10)
 	grapes.Print()
+
 }

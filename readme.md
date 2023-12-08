@@ -47,6 +47,9 @@
         - sync package
         - sync/atomic package
 
+- Reference
+    - https://go.dev/talks/2015/go4cpp.slide
+
 ## Hello World
 
 ```
@@ -219,3 +222,4 @@ To cross compile
 
 ## Methods
 - functions with receivers
+- Type definition & method definition must be in the same package
